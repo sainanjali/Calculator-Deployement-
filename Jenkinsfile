@@ -5,7 +5,8 @@ pipeline {
 
         stage('Clone Code') {
             steps {
-                git 'https://github.com/sainanjali/Calculator-Deployement-.git'
+                git branch: 'main',
+                url: 'https://github.com/sainanjali/Calculator-Deployement-.git'
             }
         }
 
