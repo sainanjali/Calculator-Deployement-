@@ -12,23 +12,25 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat 'npm install'
+                dir('calculator') {
+                    bat 'npm install'
+                }
             }
         }
 
         stage('Run Test Cases') {
             steps {
-                bat 'npm test'
+                dir('calculator') {
+                    bat 'npm test'
+                }
             }
         }
 
         stage('Deploy Website') {
             steps {
-                bat '''
-                xcopy index.html C:\\deploy\\calculator\\ /Y
-                xcopy style.css C:\\deploy\\calculator\\ /Y
-                xcopy script.js C:\\deploy\\calculator\\ /Y
-                '''
+                dir('calculator') {
+                    bat 'npm run build'
+                }
             }
         }
     }
