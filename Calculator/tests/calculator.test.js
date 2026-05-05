@@ -1,4 +1,4 @@
-const { add, subtract, multiply, divide } = require('../calculatorLogic');
+const { add, subtract, multiply, divide } = require('../script');
 // add(a, b)
 // subtract(a, b)
 // multiply(a, b)
