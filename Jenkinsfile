@@ -25,13 +25,5 @@ pipeline {
                 }
             }
         }
-
-        stage('Deploy Website') {
-            steps {
-                dir('calculator') {
-                    bat 'npm run build'
-                }
-            }
-        }
     }
 }
